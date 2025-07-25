@@ -1,7 +1,6 @@
-import SplashScreens from "@/components/SplashScreens";
-
 export default function Home() {
   return (
-    <SplashScreens />
+    <div style={{height:"100vh", width:"100%", background: "##23147A"}}>
+    </div>
   );
 }
