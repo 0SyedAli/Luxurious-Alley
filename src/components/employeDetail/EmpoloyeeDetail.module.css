@@ -1,0 +1,91 @@
+.glassCard {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    color: #fff;
+    width: 1100px;
+}
+
+/* Table-like bordered row */
+.borderedRow {
+    border: 1px solid rgba(255, 193, 7, 0.35);
+    /* amber-ish */
+}
+
+.borderedCol:first-child {
+    border-left: none;
+}
+
+.borderedCol {
+    border-left: 1px solid rgba(255, 193, 7, 0.35);
+}
+
+.cell {
+    border-left: 1px solid rgba(255, 193, 7, 0.35);
+    background: transparent;
+    color: rgba(255, 255, 255, .9);
+}
+
+.cell:first-child {
+    border-left: none;
+}
+
+.cellActive {
+    background: rgba(255, 255, 255, 0.10);
+}
+
+.cellRowHighlight {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.fieldSurface {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.fieldSurface textarea,
+.fieldSurface select {
+    font-size: 14px;
+}
+
+/* Amber gradient button */
+.selectedAmber {
+    background: #CD8A1A;
+    color: #1b1b1b;
+    border: none;
+    box-shadow: 0 6px 16px rgba(255, 159, 64, .35);
+    font-size: 12px;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+.selectedAmber:hover {
+    background: linear-gradient(90deg, #ffd24d 0%, #ffa14f 100%);
+    color: #000;
+}
+
+.btnAmber {
+    background: #CD8A1A;
+    color: #FFF;
+    border: none;
+    box-shadow: 0 6px 16px rgba(255, 159, 64, .35);
+    min-width: 270px;
+    font-weight: 500;
+    font-family: system-ui;
+}
+
+.btnAmber:hover {
+    background: linear-gradient(90deg, #ffd24d 0%, #ffa14f 100%);
+    color: #000;
+}
+
+/* Make Bootstrap outline light look subtler over the glass */
+.btn-outline-light {
+    --bs-btn-color: rgba(255, 255, 255, .8);
+    --bs-btn-border-color: rgba(255, 255, 255, .35);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: rgba(255, 255, 255, .08);
+    --bs-btn-hover-border-color: rgba(255, 255, 255, .5);
+}

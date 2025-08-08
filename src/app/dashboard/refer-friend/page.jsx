@@ -74,7 +74,7 @@ const referFriend = () => {
                         </button>
                     </div>
                 </form>
-                <div className="rf_list">
+                {/* <div className="rf_list">
                     <div className="rfl_top">
                         <h5>Referrals Sent </h5>
                         <Link href="/" >View All</Link>
@@ -109,16 +109,10 @@ const referFriend = () => {
                                     </tbody>
                                 </table>
                             </div>
-                            {/* <div className="pagination justify-content-end">
-                                      <button className="active">1</button>
-                                      <button>2</button>
-                                      <button>3</button>
-                                      <button>4</button>
-                                      <button>&gt;&gt;</button>
-                                    </div> */}
+                         
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

@@ -439,7 +439,7 @@
     width: 100%;
     height: 170px;
     border-radius: 16px;
-    background-color: #E4E2DD;
+    background-color: #929292;
     overflow: hidden;
 }
 
@@ -454,12 +454,12 @@
     position: relative;
 }
 
-.services_dash .sd_card span {
+.services_dash .sd_item_img span {
     width: 29px;
     height: 29px;
     border-radius: 9px;
-    border: 1px solid #C78015;
-    color: #C78015;
+    border: 1px solid #FFF;
+    color: #FFF;
     font-size: 18px;
     display: inline-flex;
     align-items: center;
@@ -469,7 +469,7 @@
     top: 10px;
     right: 20px;
     z-index: 99;
-    background-color: #FFF;
+    background-color: #C78015;
 }
 
 
@@ -660,7 +660,7 @@
 .aubl_img_container {
     width: 120px;
     height: 120px;
-    background: #8f6c1099;
+    background: #e9b82f61;
     border: 1px solid #C78015;
     /* background: linear-gradient(270deg, rgba(143, 108, 16, 1) 0%, rgba(162, 123, 34, 1) 8%, rgba(173, 132, 45, 1) 16%, rgba(177, 135, 49, 1) 25%, rgba(177, 135, 49, 1) 64%, rgba(160, 124, 31, 1) 100%); */
     border-radius: 8px;
@@ -702,7 +702,7 @@
     width: 100%;
     position: relative;
     text-align: start;
-    background: #8f6c1099;
+    background: #e9b82f61;
     border: 1px solid #C78015;
     /* background: linear-gradient(270deg, rgba(143, 108, 16, 1) 0%, rgba(162, 123, 34, 1) 8%, rgba(173, 132, 45, 1) 16%, rgba(177, 135, 49, 1) 25%, rgba(177, 135, 49, 1) 64%, rgba(160, 124, 31, 1) 100%); */
     border-radius: 8px;
@@ -797,7 +797,7 @@ span.aic_icon g {
     width: 100%;
     border-radius: 8px;
     height: 56px;
-    background: #8f6c1099;
+    background: #e9b82f61;
     border: 1px solid #C78015;
     color: #FFF;
     padding: 10px 20px;
@@ -1019,7 +1019,7 @@ span.aic_icon g {
 }
 
 .mpt_table table td {
-    color: #797979;
+    color: #FFF;
     font-size: 12px;
     text-align: center;
     font-family: var(--font-lato);
@@ -1029,7 +1029,7 @@ span.aic_icon g {
 }
 
 .mpt_table table td:first-child {
-    color: #FFFF;
+    color: #ccc;
 }
 
 .mpt_table table tr th:first-child {
@@ -1048,19 +1048,25 @@ span.aic_icon g {
 
 .mpt_table table tr td:first-child {
     border-left: 1px solid #ccc;
+    white-space: nowrap;
+
+}
+
+.mpt_table table tr td {
+    background-color: #e9b82f61;
 }
 
 .mpt_table table tr td:last-child {
     border-right: 1px solid #ccc;
 }
 
-.mpt_table table tr:last-child td:first-child {
+/* .mpt_table table tr:last-child td:first-child {
     border-bottom-left-radius: 20px;
 }
 
 .mpt_table table tr:last-child td:last-child {
     border-bottom-right-radius: 20px;
-}
+} */
 
 
 /* all reviews tab */
@@ -1427,7 +1433,7 @@ span.aic_icon g {
 
 .am_submit {
     border: none;
-    /* background: #8f6c1099;
+    /* background: #e9b82f61;
 background: linear-gradient(270deg, rgba(143, 108, 16, 1) 0%, rgba(162, 123, 34, 1) 8%, rgba(173, 132, 45, 1) 16%, rgba(177, 135, 49, 1) 25%, rgba(177, 135, 49, 1) 64%, rgba(160, 124, 31, 1) 100%); */
     background-color: #CD8A1A;
     width: 100px;
@@ -2112,8 +2118,8 @@ background: linear-gradient(270deg, rgba(143, 108, 16, 1) 0%, rgba(162, 123, 34,
 }
 
 .auth_form_check2 .form-check-input:checked {
-    background-color: #A83F98;
-    border-color: #A83F98;
+    background-color: #C78015;
+    border-color: #C78015;
 }
 
 .timings h4 {

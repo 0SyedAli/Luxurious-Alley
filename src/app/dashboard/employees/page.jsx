@@ -212,48 +212,55 @@ const Employees = () => {
               </div>
             </div>
           </div>
+          <button class="btn det_ins mt-4">Add Employee</button>
         </div>
       </MyModal>
       <div className='employees_dash'>
         <h3>Hair Services</h3>
         <div className="row mt-3 mb-4">
-          <div className="col-2">
-            <div className="ed_item">
-              <Image
-                src="/images/emp_img1.png"
-                width={144}
-                height={144}
-                className="emp_img"
-                alt="Frame"
-              />
-              <h5>Ann Merry</h5>
-            </div>
+          <div className="col-md-4 col-lg-3 col-xxl-2">
+            <a href="/dashboard/employee-detail">
+              <div className="ed_item">
+                <Image
+                  src="/images/emp_img1.png"
+                  width={144}
+                  height={144}
+                  className="emp_img"
+                  alt="Frame"
+                />
+                <h5>Ann Merry</h5>
+              </div>
+            </a>
           </div>
-          <div className="col-2">
-            <div className="ed_item">
-              <Image
-                src="/images/emp_img1.png"
-                width={144}
-                height={144}
-                className="emp_img"
-                alt="Frame"
-              />
-              <h5>Ann Merry</h5>
-            </div>
+          <div className="col-md-4 col-lg-3 col-xxl-2">
+            <a href="/dashboard/employee-detail">
+              <div className="ed_item">
+                <Image
+                  src="/images/emp_img1.png"
+                  width={144}
+                  height={144}
+                  className="emp_img"
+                  alt="Frame"
+                />
+                <h5>Ann Merry</h5>
+              </div>
+            </a>
           </div>
-          <div className="col-2">
-            <div className="ed_item">
-              <Image
-                src="/images/emp_img1.png"
-                width={144}
-                height={144}
-                className="emp_img"
-                alt="Frame"
-              />
-              <h5>Ann Merry</h5>
-            </div>
+          <div className="col-md-4 col-lg-3 col-xxl-2">
+            <a href="/dashboard/employee-detail">
+              <div className="ed_item">
+                <Image
+                  src="/images/emp_img1.png"
+                  width={144}
+                  height={144}
+                  className="emp_img"
+                  alt="Frame"
+                />
+                <h5>Ann Merry</h5>
+              </div>
+            </a>
           </div>
-          <div className="col-2">
+          <div className="col-md-4 col-lg-3 col-xxl-2">
             <div className="ed_item">
               <div className="ed_item_border" onClick={openModal}><span><CiCirclePlus /></span></div>
             </div>
@@ -261,31 +268,35 @@ const Employees = () => {
         </div>
         <h3>Nails Services</h3>
         <div className="row mt-3 mb-4">
-          <div className="col-2">
-            <div className="ed_item">
-              <Image
-                src="/images/emp_img1.png"
-                width={144}
-                height={144}
-                className="emp_img"
-                alt="Frame"
-              />
-              <h5>Ann Merry</h5>
-            </div>
+          <div className="col-md-4 col-lg-3 col-xxl-2">
+            <a href="/dashboard/employee-detail">
+              <div className="ed_item">
+                <Image
+                  src="/images/emp_img1.png"
+                  width={144}
+                  height={144}
+                  className="emp_img"
+                  alt="Frame"
+                />
+                <h5>Ann Merry</h5>
+              </div>
+            </a>
           </div>
-          <div className="col-2">
-            <div className="ed_item">
-              <Image
-                src="/images/emp_img1.png"
-                width={144}
-                height={144}
-                className="emp_img"
-                alt="Frame"
-              />
-              <h5>Ann Merry</h5>
-            </div>
+          <div className="col-md-4 col-lg-3 col-xxl-2">
+            <a href="/dashboard/employee-detail">
+              <div className="ed_item">
+                <Image
+                  src="/images/emp_img1.png"
+                  width={144}
+                  height={144}
+                  className="emp_img"
+                  alt="Frame"
+                />
+                <h5>Ann Merry</h5>
+              </div>
+            </a>
           </div>
-          <div className="col-2">
+          <div className="col-md-4 col-lg-3 col-xxl-2">
             <div className="ed_item">
               <div className="ed_item_border" onClick={openModal}><span><CiCirclePlus /></span></div>
             </div>
@@ -293,31 +304,35 @@ const Employees = () => {
         </div>
         <h3>Skin Services</h3>
         <div className="row mt-3 mb-4">
-          <div className="col-2">
-            <div className="ed_item">
-              <Image
-                src="/images/emp_img1.png"
-                width={144}
-                height={144}
-                className="emp_img"
-                alt="Frame"
-              />
-              <h5>Ann Merry</h5>
-            </div>
+          <div className="col-md-4 col-lg-3 col-xxl-2">
+            <a href="/dashboard/employee-detail">
+              <div className="ed_item">
+                <Image
+                  src="/images/emp_img1.png"
+                  width={144}
+                  height={144}
+                  className="emp_img"
+                  alt="Frame"
+                />
+                <h5>Ann Merry</h5>
+              </div>
+            </a>
           </div>
-          <div className="col-2">
-            <div className="ed_item">
-              <Image
-                src="/images/emp_img1.png"
-                width={144}
-                height={144}
-                className="emp_img"
-                alt="Frame"
-              />
-              <h5>Ann Merry</h5>
-            </div>
+          <div className="col-md-4 col-lg-3 col-xxl-2">
+            <a href="/dashboard/employee-detail">
+              <div className="ed_item">
+                <Image
+                  src="/images/emp_img1.png"
+                  width={144}
+                  height={144}
+                  className="emp_img"
+                  alt="Frame"
+                />
+                <h5>Ann Merry</h5>
+              </div>
+            </a>
           </div>
-          <div className="col-2">
+          <div className="col-md-4 col-lg-3 col-xxl-2">
             <div className="ed_item">
               <div className="ed_item_border" onClick={openModal}><span><CiCirclePlus /></span></div>
             </div>

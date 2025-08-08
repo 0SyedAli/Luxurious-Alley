@@ -31,7 +31,7 @@ const Appointment = () => {
     return (
         <div style={{ margin: '20px', width: "100%" }}>
             <div className="cal_container row align-items-center">
-                <button className="btn add_appointment" >ADD APPOINTMENT</button>
+                {/* <button className="btn add_appointment" >ADD APPOINTMENT</button> */}
                 <div className='col-3'>
                     <div className="time_slot">
                         <h3>Time Slot</h3>
@@ -91,7 +91,7 @@ const Appointment = () => {
                         <div className="pt-2 dash_list page">
                             <div className="dr_head">
                                 <h5>Appointments</h5>
-                                <Link href="/" className="dr_btn">View All</Link>
+                                <Link href="#!" className="dr_btn">View All</Link>
                             </div>
                             <div className="table-responsive">
                                 <table className="table caption-top">

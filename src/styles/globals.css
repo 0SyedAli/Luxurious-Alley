@@ -3029,12 +3029,54 @@ form.s4_form .dt_select_location input {
   }
 }
 
+.det_ins {
+  border-radius: 8px;
+  background-color: #C78015;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  min-width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .mpt_chart {
   height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .mpt_chart img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
+  width: 200px;
+  height: auto;
+}
+
+.mp2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-between;
+  text-align: center;
+  background: #e9b82f61;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.mpt_chart h4 {
+  font-family: var(--font-inter);
+  font-weight: 700;
+  font-size: 26px;
+
+}
+
+.mpt_chart h5 {
+  font-family: var(--font-lato);
+  font-weight: 700;
+  font-size: 12px;
 }
