@@ -70,18 +70,18 @@ const EditServieDashboard = () => {
             const token = localStorage.getItem("token");
             const formDataToSend = new FormData();
             formDataToSend.append("serviceId", serviceId);
-            formDataToSend.append("title", formData.title);
+            formDataToSend.append("Title", formData.title);
             formDataToSend.append("text", formData.text);
             // formDataToSend.append("servicePoints", formData.servicePoints);
-            formDataToSend.append("price", formData.price);
+            // formDataToSend.append("price", formData.price);
             // ✅ Append each image file
             formData.subServiceImage.forEach((image, index) => {
                 if (image instanceof File) {
-                    formDataToSend.append("subServiceImages", image);
+                    formDataToSend.append("ServiceImage", image);
                 }
             });
             const response = await axios.post(
-                `${process.env.NEXT_PUBLIC_API_URL}/admin/EditSubService`,
+                `${process.env.NEXT_PUBLIC_API_URL}/admin/updateService`,
                 formDataToSend,
                 {
                     headers: {
@@ -194,7 +194,7 @@ const EditServieDashboard = () => {
                             onChange={handleChange}
                             placeholder="Add Points" />
                     </div> */}
-                    <div className="col-12">
+                    {/* <div className="col-12">
                         <label htmlFor="" className="pb-2" style={{ fontWeight: "bolder", fontSize: "20px", textTransform: "capitalize" }}>Price</label>
                         <div className="dollar_input ps-0">
                             <span>$</span>
@@ -205,7 +205,7 @@ const EditServieDashboard = () => {
                                 onChange={handleChange}
                                 placeholder="$" />
                         </div>
-                    </div>
+                    </div> */}
                     <div className='col-12 pt-4'>
                         <button disabled={loading} className="btn theme-btn2">
                             {loading ? <Spinner /> : "Continue"}

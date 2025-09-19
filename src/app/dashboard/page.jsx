@@ -126,37 +126,37 @@ const Dashboard = () => {
     msg: "Yearly Revenue!",
     data: [
       {
-        totalRevenue: 400,
+        totalRevenue: 0,
         appointmentsCount: 4,
         year: 2025,
         month: 2,
       },
       {
-        totalRevenue: 100,
+        totalRevenue: 0,
         appointmentsCount: 4,
         year: 2025,
         month: 3,
       },
       {
-        totalRevenue: 100,
+        totalRevenue: 0,
         appointmentsCount: 4,
         year: 2025,
         month: 4,
       },
       {
-        totalRevenue: 100,
+        totalRevenue: 0,
         appointmentsCount: 4,
         year: 2025,
         month: 5,
       },
       {
-        totalRevenue: 100,
+        totalRevenue: 0,
         appointmentsCount: 4,
         year: 2025,
         month: 6,
       },
       {
-        totalRevenue: 100,
+        totalRevenue: 0,
         appointmentsCount: 4,
         year: 2025,
         month: 7,

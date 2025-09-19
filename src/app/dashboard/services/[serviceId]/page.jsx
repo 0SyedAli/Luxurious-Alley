@@ -10,18 +10,18 @@ import Spinner from '@/components/Spinner';
 import AuthGuard from '@/components/AuthGuard';
 
 const ServiceDetail = () => {
-  const { subServiceId } = useParams();// Extract the serviceId from the URL
+  const { serviceId } = useParams();// Extract the serviceId from the URL
 
   const [serviceDetails, setServiceDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!subServiceId) return;
+    if (!serviceId) return;
 
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/getSubserviceById?subServiceId=${subServiceId}`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/getServiceById?serviceId=${serviceId}`);
         setServiceDetails(response.data.data);
       } catch (err) {
         setError('Failed to fetch service details.');
@@ -31,7 +31,7 @@ const ServiceDetail = () => {
     };
 
     fetchData();
-  }, [subServiceId]);
+  }, [serviceId]);
 
   if (loading) return <Spinner />;
   if (error) return <p>{error}</p>;
@@ -74,7 +74,7 @@ const ServiceDetail = () => {
           </div>
           <div className='ab_se'>
             <h5>About</h5>
-            <Link href={`/dashboard/services/edit/${subServiceId}`}><h5 style={{ color: '#51004F' }}><span><PiPencilSimpleLineBold /></span>Edit details</h5></Link>
+            <Link href={`/dashboard/services/edit/${serviceId}`}><h5 style={{ color: '#8F6C10' }}><span><PiPencilSimpleLineBold /></span>Edit details</h5></Link>
           </div>
           <p>
             {serviceDetails.text}
@@ -92,7 +92,7 @@ const ServiceDetail = () => {
         </div>
         <div className='d-flex align-items-center gap-5'>
         <Link className="btn theme-btn2" href="/dashboard/services">Go back</Link>
-          <Link className="btn theme-btn2" href="/dashboard/add-subservice">Add Sub-service</Link>
+          <Link className="btn theme-btn2" href="/dashboard/add-service">Add service</Link>
         </div>
       </div>
     </div>

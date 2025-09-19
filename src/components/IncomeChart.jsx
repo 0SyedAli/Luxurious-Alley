@@ -9,6 +9,7 @@ import {
     Title,
     Tooltip,
     Legend,
+    Colors,
 } from "chart.js";
 
 // Register Chart.js components
@@ -37,18 +38,40 @@ const IncomeChart = ({ data }) => {
         plugins: {
             legend: {
                 position: "top",
+                labels: {
+                    color: "#fff", // legend text color
+                },
+            },
+            tooltip: {
+                bodyColor: "#fff", // tooltip text color
+                titleColor: "#fff",
             },
             chartAreaBorder: {
                 borderWidth: 0,
             }
+
             // title: {
             //     display: true,
             //     text: `Yearly Revenue ${data[0].totalRevenue}`,
             // },
         },
         scales: {
+            x: {
+                ticks: {
+                    color: "#fff", // x-axis labels color
+                },
+                grid: {
+                    color: "rgba(255,255,255,0.1)", // optional: light grid lines
+                },
+            },
             y: {
                 beginAtZero: true,
+                ticks: {
+                    color: "#fff", // y-axis labels color
+                },
+                grid: {
+                    color: "rgba(255,255,255,0.1)", // optional
+                },
             },
         },
     };

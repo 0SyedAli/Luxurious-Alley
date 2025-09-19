@@ -343,7 +343,7 @@ const Employees = () => {
           ))
         ) : (
           <div>
-            <h3>Pls add sub services</h3>
+            <h3>Pls add services</h3>
             <div className="row mt-3 mb-4">
               <div className="col-12">
                 <div className="ed_item align-items-start">

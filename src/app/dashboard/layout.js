@@ -14,7 +14,7 @@ export default function DashboardLayout({ children }) {
   const pageTitles = {
     '/dashboard': '',
     '/dashboard/account-setting': 'Account Setting',
-    '/dashboard/add-subservice': 'Add Sub Services',
+    '/dashboard/add-service': 'Add Services',
     '/dashboard/services/edit': 'Edit Sub Services',
     '/dashboard/appointments': 'Appointments',
     '/dashboard/clients-profile': 'Clients Profile',

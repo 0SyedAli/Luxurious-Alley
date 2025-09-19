@@ -206,7 +206,7 @@ const ServicesDashboard = () => {
         <p className="text-danger">{error}</p>
       ) : (
         <>
-          <Link className="btn add_appointment" href="/dashboard/add-subservice">
+          <Link className="btn add_appointment" href="/dashboard/add-service">
             Add Sub-service
           </Link>
 
