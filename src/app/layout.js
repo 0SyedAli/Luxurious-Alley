@@ -1,8 +1,12 @@
-import { Open_Sans, Inter, Epilogue, Montserrat, Lato, Roboto, Poppins, Lora } from "next/font/google";
+"use client";
+import { Open_Sans, Inter, Epilogue, Montserrat, Lato, Roboto, Poppins } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.css";
-import BootstrapClients from "@/components/BootstrapClients";
-
+import BootstrapClients from "../components/BootstrapClients";
+import { Provider } from "react-redux";
+import { store } from "../lib/store";
+import ToastProvider from "../components/ToastProvider";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 const interFont = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -35,25 +39,20 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "700"]
 });
-const lora = Lora({
-  variable: "--font-lora",
-  subsets: ["latin"],
-  weight: ['400', '500', '600', '700']
-});
 
-
-export const metadata = {
-  title: "Luxurious Alley",
-  description: "",
-};
+const CLIENT_ID = "797389704553-dflobc44jfaqjp2d2038nhiksg031t5v.apps.googleusercontent.com"
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${poppins.variable} ${epilogue.variable} ${roboto.variable} ${lato.variable} ${montserrat.variable} ${interFont.variable} ${openSans.variable} ${lora.variable}`}>
-        {children}
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={`${poppins.variable} ${epilogue.variable} ${roboto.variable} ${lato.variable} ${montserrat.variable} ${interFont.variable} ${openSans.variable}`}>
+        <ToastProvider /> {/* Global toast notifications */}
+        <GoogleOAuthProvider clientId={CLIENT_ID}>
+          <Provider store={store}>{children}</Provider>
+        </GoogleOAuthProvider>
         <BootstrapClients />
       </body>
     </html>
   );
 }
+

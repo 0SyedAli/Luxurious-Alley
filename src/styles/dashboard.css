@@ -62,7 +62,6 @@
     position: absolute;
     top: 0;
     left: 0;
-
 }
 
 .auth_container {
@@ -111,14 +110,17 @@
 }
 
 .auth_container input:-webkit-autofill {
-    background-color: #c7801562 !important;
-    -webkit-box-shadow: 0 0 0px 1000px #c7801562 inset !important;
+    background-color: #C78015 !important;
+    -webkit-box-shadow: 0 0 0px 1000px #c780159c inset !important;
     -webkit-text-fill-color: #fff !important;
-    /* optional, for text color */
 }
 
 .auth_container select {
     padding: 10px 5px;
+}
+
+.auth_container select option {
+    color: #000;
 }
 
 .auth_container input::placeholder,
@@ -505,7 +507,7 @@
     font-family: var(--font-montserrat);
     line-height: 28px;
     margin: 0;
-    color: #000;
+    color: #FFF;
 }
 
 .payment1 .auth_form_radio label {
@@ -514,6 +516,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    color: #FFF;
 }
 
 .payment_head {
@@ -693,6 +696,7 @@ span.aic_icon g {
 }
 
 .bd_fields input::placeholder,
+.bd_fields textarea::placeholder,
 .bd_fields select option {
     color: #FFF;
     font-family: var(--font-open-sans);
@@ -992,6 +996,9 @@ span.aic_icon g {
     outline: 2px solid transparent;
     box-shadow: 0 5px 12px #c49a6c94;
     position: relative;
+}
+.auth_container form .theme-btn3 {
+    color: #FFF;
 }
 
 .hs_btns button,
@@ -1309,6 +1316,7 @@ span.aic_icon g {
         min-width: 120px;
         height: 120px;
     }
+
     .hs_btns {
         gap: 10px;
     }

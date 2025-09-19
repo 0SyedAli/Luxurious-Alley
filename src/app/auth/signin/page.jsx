@@ -1,48 +1,78 @@
-"use client"
-import Link from 'next/link'
-import React from 'react'
+"use client";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { adminLogin, clearAuthState } from "../../../lib/slices/authslice";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Spinner from "@/components/Spinner";
 
-const Signin = () => {
+const AdminLogin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isClient, setIsClient] = useState(false); // Prevent hydration issues
+
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const { loading, error, token, user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    console.log("signin Rendered");
+
+  }, [])
+  
+  useEffect(() => {
+    setIsClient(true); // Mark as client-side rendering
+
+    if (token !== undefined && token !== null && token !== "" && user && user.adminId) {
+      router.replace("/dashboard"); // Redirect if logged in and adminId exists
+    }
+
+    return () => {
+      dispatch(clearAuthState());
+    };
+  }, [dispatch, user, router]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(adminLogin({ email, password })).then((action) => {
+      if (action.meta.requestStatus === "fulfilled") {
+        router.replace("/dashboard"); // Redirect on successful login
+      }
+    });
+  };
+
+  if (!isClient) return null; // Prevent mismatched server & client rendering
+
   return (
     <div className="content align-self-center mw-600">
-      <div className='auth_container'>
-        <div className='auth_head'>
+      <div className="auth_container">
+        <div className="auth_head">
           <h2>Getting Started</h2>
           <p>Elevate your salon with a seamless setup, styled for success.</p>
         </div>
-        <form action="#!" autoComplete="off">
+        <form onSubmit={handleSubmit}>
           <input
-            type="text"
-            name="fake_user"
-            autoComplete="new-username"
-            placeholder="Username"
-            readOnly
-            onFocus={(e) => e.target.removeAttribute("readOnly")}
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <input
             type="password"
-            name="fake_pass"
-            autoComplete="new-password"
             placeholder="Password"
-            readOnly
-            onFocus={(e) => e.target.removeAttribute("readOnly")}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
           />
-          <div className="">
-            <div className="remember form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="exampleCheck1"
-              />
-              <label className="form-check-label" htmlFor="exampleCheck1">
-                Check me out
-              </label>
-            </div>
-          </div>
           <div className="text-center">
-            <Link href="/dashboard" className="theme-btn2">
-              Sign in
-            </Link>
+            <button type="submit" disabled={loading} className="theme-btn2">
+              {loading ? <Spinner /> : "Login"}
+            </button>
+            <div className="mt-4">
+              {user && <p className="success  text-success">Welcome, {user.name}!</p>}
+              {error && <p className="error text-danger">{error}</p>}
+            </div>
             <div className="register_link">
               <h5>
                 Don't have an account?
@@ -51,10 +81,9 @@ const Signin = () => {
             </div>
           </div>
         </form>
-
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Signin
+export default AdminLogin;

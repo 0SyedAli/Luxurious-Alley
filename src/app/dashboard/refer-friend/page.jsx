@@ -1,11 +1,12 @@
 "use client"
+import AuthGuard from "@/components/AuthGuard";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GoStar } from "react-icons/go";
 import { RxCaretSort } from "react-icons/rx";
 
 
-const referFriend = () => {
+const ReferFriend = () => {
     const [tab, setTab] = useState();
     const [activeTab, setActiveTab] = useState('complete');
     useEffect(() => {
@@ -74,10 +75,10 @@ const referFriend = () => {
                         </button>
                     </div>
                 </form>
-                {/* <div className="rf_list">
+                <div className="rf_list">
                     <div className="rfl_top">
                         <h5>Referrals Sent </h5>
-                        <Link href="/" >View All</Link>
+                        <Link href="/">View All</Link>
                     </div>
                     <div className="dr_table">
                         <div className="pt-2 dash_list page">
@@ -109,13 +110,25 @@ const referFriend = () => {
                                     </tbody>
                                 </table>
                             </div>
-                         
+                            {/* <div className="pagination justify-content-end">
+                                      <button className="active">1</button>
+                                      <button>2</button>
+                                      <button>3</button>
+                                      <button>4</button>
+                                      <button>&gt;&gt;</button>
+                                    </div> */}
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
         </div>
     )
 }
 
-export default referFriend
+const ProtectedReferFriendDashboard = () => (
+    <AuthGuard>
+      <ReferFriend />
+    </AuthGuard>
+  );
+  
+  export default ProtectedReferFriendDashboard;

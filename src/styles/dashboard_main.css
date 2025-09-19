@@ -454,7 +454,7 @@
     position: relative;
 }
 
-.services_dash .sd_item_img span {
+.sd_card span {
     width: 29px;
     height: 29px;
     border-radius: 9px;
@@ -1160,8 +1160,8 @@ span.aic_icon g {
 }
 
 .mc_new .form-check-input:checked {
-    background-color: #7a2b8e;
-    border-color: #7a2b8e;
+    background-color: #CD8A1A;
+    border-color: #CD8A1A;
 }
 
 .mc_new .form-check-input:focus {
@@ -1172,7 +1172,7 @@ span.aic_icon g {
     font-size: 15px;
     font-family: var(--font-inter);
     font-weight: 700;
-    color: #7a2b8e;
+    color: #CD8A1A;
 }
 
 .mc_new2 {
@@ -1183,7 +1183,7 @@ span.aic_icon g {
     font-size: 15px;
     font-family: var(--font-inter);
     font-weight: 700;
-    color: #7a2b8e;
+    color: #CD8A1A;
     margin: 0;
 }
 
@@ -1203,7 +1203,7 @@ span.aic_icon g {
     font-size: 19px;
     font-family: var(--font-inter);
     font-weight: 700;
-    color: #7a2b8e;
+    color: #CD8A1A;
     margin: 0;
 }
 
@@ -1232,9 +1232,15 @@ span.aic_icon g {
 .mcn1 input {
     width: 85px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #CD8A1A;
     height: 30px;
     padding: 0 10px;
+    background-color: transparent;
+}
+
+.mcn1 input:focus-visible {
+    border: 2px solid #CD8A1A;
+
 }
 
 .mcn1 input::-webkit-outer-spin-button,
@@ -1272,16 +1278,17 @@ span.aic_icon g {
     border-radius: 10px;
     padding: 10px;
     border: 1px solid #ccc;
+    background-color: transparent;
     font-size: 15px;
     font-family: var(--font-inter);
     font-weight: 400;
-    color: #000;
+    color: #FFFF;
     margin: 0;
 }
 
 .emc_form input:focus-visible,
 .emc_form textarea:focus {
-    border: 1px solid #6F1785;
+    border: 1px solid #cd8b1ab6;
     outline: none;
 }
 
@@ -1295,6 +1302,7 @@ span.aic_icon g {
     width: 180px;
     height: 50px;
     font-size: 14px;
+    color: #FFF;
 }
 
 .search_input input {
@@ -1427,7 +1435,7 @@ span.aic_icon g {
     font-size: 14px;
     font-family: var(--font-inter);
     font-weight: 500;
-    color: #000;
+    color: #FFF;
     margin-bottom: 5px;
 }
 

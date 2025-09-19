@@ -2,10 +2,13 @@
 import { LuUsersRound } from "react-icons/lu";
 import { IoMdArrowUp } from "react-icons/io";
 import { RxCaretSort } from "react-icons/rx";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import IncomeChart from "@/components/IncomeChart";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import Spinner from "@/components/Spinner";
+import AuthGuard from "@/components/AuthGuard";
+import IncomeChart from "@/components/IncomeChart";
 const image1 = "/images/user1.png";
 const image2 = "/images/user1.png";
 const image3 = "/images/user1.png";
@@ -19,15 +22,68 @@ const image10 = "/images/user1.png";
 const image11 = "/images/user1.png";
 const image12 = "/images/user1.png";
 
-export default function Dashboard() {
+const Dashboard = () => {
   const [tab, setTab] = useState();
+  const [userData, setUserData] = useState();
+  const [adminId, setadminId] = useState();
+  const [statistics, setStatistics] = useState("");
+  const [revenue, setRevenue] = useState("");
   const [activeTab, setActiveTab] = useState('complete');
+  const router = useRouter();
+
+  const fetchStates = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/getCustomers?adminId=${adminId}`
+      )
+      setStatistics(response?.data?.data || "");
+    }
+    catch (error) {
+      console.error("Error fetching services:", error);
+    }
+  };
+
+  const fetchYearlyRevenue = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/yearlyRevenue?adminId=${adminId}`
+      )
+      setRevenue(response?.data?.data || "");
+    }
+    catch (error) {
+      console.error("Error fetching services:", error);
+    }
+  };
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user && (!user?.id || !user?._id)) {
+      router.push('/auth/signin')
+    }
+    else {
+      setUserData(user)
+      setadminId(user?.id || user?._id)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (adminId) {
+      // Fetch services once adminId is available
+      const timer = setTimeout(() => {
+        fetchStates();
+        fetchYearlyRevenue();
+      }, 1000);
+      return () => clearTimeout(timer); // Clean up timeout on component unmount
+    }
+  }, [adminId]); // Runs when adminId changes
+
   useEffect(() => {
     setTab();
     setTimeout(() => {
       setTab(activeTab);
     }, 1);
   }, [activeTab])
+
   const orders = [
     {
       cust_id: "PB-001",
@@ -116,17 +172,16 @@ export default function Dashboard() {
         <div className="col-4 pe-1">
           <div className="dash_profile1">
             <div className="dp_img mb-4">
-              <Image 
-              src="/images/emp_img1.png"
-              width={100}
-              height={100}
-              alt=""
+              <img
+                src={userData?.profileImage ? `${process.env.NEXT_PUBLIC_IMAGE_URL}/${userData?.profileImage}` : "/images/unknown_user.jpg"}// : "/images/placeholder.jpg"}
+                width={135}
+                height={135}
               />
             </div>
-            <h5>Jazy Dewo Beauty</h5>
+            <h5>{userData && (userData.name || (userData.firstName + " " + userData.lastName))}</h5>
             <div className="d-flex align-items-center justify-content-center  flex-wrap gap-2">
-              <h6><span>DB-001</span></h6>
-              <div className="dp_dot"></div>
+              {/* <h6><span>DB-001</span></h6>
+              <div className="dp_dot"></div> */}
               <h6>Beauty Saloon</h6>
             </div>
           </div>
@@ -139,10 +194,10 @@ export default function Dashboard() {
                     <h5>Total<br />
                       Customers</h5>
                   </div>
-                  <h3>2,150</h3>
+                  <h3>{!statistics ? <Spinner borderWidth="border-2" /> : statistics.totalCustomers}</h3>
                   <div className="profit_perc">
                     <span><IoMdArrowUp /></span>
-                    <h5>2.45%</h5>
+                    <h5>0%</h5>
                   </div>
                 </div>
               </div>
@@ -150,13 +205,12 @@ export default function Dashboard() {
                 <div className="dp2_item">
                   <div className="tc">
                     <span><LuUsersRound /></span>
-                    <h5>Total<br />
-                      Customers</h5>
+                    <h5>Total Sales ($)</h5>
                   </div>
-                  <h3>2,150</h3>
+                  <h3>{!statistics ? <Spinner borderWidth="border-2" /> : statistics.totalIncome}</h3>
                   <div className="profit_perc">
                     <span><IoMdArrowUp /></span>
-                    <h5>2.45%</h5>
+                    <h5>0%</h5>
                   </div>
                 </div>
               </div>
@@ -164,13 +218,12 @@ export default function Dashboard() {
                 <div className="dp2_item">
                   <div className="tc">
                     <span><LuUsersRound /></span>
-                    <h5>Total<br />
-                      Customers</h5>
+                    <h5>Appts. Booked</h5>
                   </div>
-                  <h3>2,150</h3>
+                  <h3>{!statistics ? <Spinner borderWidth="border-2" /> : (statistics.profits ? statistics.profits : "0")}</h3>
                   <div className="profit_perc">
                     <span><IoMdArrowUp /></span>
-                    <h5>2.45%</h5>
+                    <h5>0%</h5>
                   </div>
                 </div>
               </div>
@@ -178,13 +231,12 @@ export default function Dashboard() {
                 <div className="dp2_item">
                   <div className="tc">
                     <span><LuUsersRound /></span>
-                    <h5>Total<br />
-                      Customers</h5>
+                    <h5>Average Sale Value</h5>
                   </div>
-                  <h3>2,150</h3>
+                  <h3>{!statistics ? <Spinner borderWidth="border-2" /> : (statistics.insights ? statistics.insights : "0")}</h3>
                   <div className="profit_perc">
                     <span><IoMdArrowUp /></span>
-                    <h5>2.45%</h5>
+                    <h5>0%</h5>
                   </div>
                 </div>
               </div>
@@ -195,13 +247,13 @@ export default function Dashboard() {
           <div className="dash-right">
             <div className="dr_head">
               <h5>Statistics</h5>
-              <Link href="/" className="dr_btn">Last 7 Days</Link>
+              {/* <Link href="/" className="dr_btn">Last 7 Days</Link> */}
             </div>
             <div className="dr_graph">
               {/* <Image src="/images/chart2.svg" width={500} height={100} alt="chart" /> */}
               <div className="dg_income">
                 <h4>Income</h4>
-                {/* <h5>{revenue.totalRevenue ? revenue.totalRevenue : "0"}</h5> */}
+                <h5>{revenue.totalRevenue ? revenue.totalRevenue : "0"}</h5>
               </div>
               <IncomeChart data={response23.data} />
             </div>
@@ -222,7 +274,7 @@ export default function Dashboard() {
                         <th scope="col">Status <span><RxCaretSort /></span></th>
                       </tr>
                     </thead>
-                    <tbody>
+                    {/* <tbody>
                       {orders
                         .filter((val) => val.status.toLowerCase().includes(activeTab))
                         .map((order, index) => (
@@ -238,8 +290,9 @@ export default function Dashboard() {
                             </td>
                           </tr>
                         ))}
-                    </tbody>
+                    </tbody> */}
                   </table>
+                  <p>No appointment available.</p>
                 </div>
                 {/* <div className="pagination justify-content-end">
                   <button className="active">1</button>
@@ -250,12 +303,21 @@ export default function Dashboard() {
                 </div> */}
               </div>
             </div>
-            <div className="text-end pt-3">
+            {/* <div className="text-end pt-3">
               <button className="btn det_ins">DETAILED INSIGHTS</button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+
+const ProtectedDashboard = () => (
+  <AuthGuard>
+    <Dashboard />
+  </AuthGuard>
+);
+
+export default ProtectedDashboard;

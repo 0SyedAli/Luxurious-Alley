@@ -16,15 +16,15 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const IncomeChart = ({ data }) => {
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
+    // Transform the API response data for the chart
     const chartData = {
         labels: data.map((item) => monthNames[item.month - 1]),
         datasets: [
             {
                 label: `Total Revenue ($)`,
                 data: data.map((item) => item.totalRevenue),
-                backgroundColor: "#C78015",
-                borderColor: "#C78015",
+                backgroundColor: "#C78015   ",
+                borderColor: "#C78015   ",
                 borderWidth: 0,
                 borderRadius: 15,
                 borderSkipped: false,
@@ -37,37 +37,22 @@ const IncomeChart = ({ data }) => {
         plugins: {
             legend: {
                 position: "top",
-                labels: {
-                    color: "#FFFFFF", // dataset label
-                },
             },
-            tooltip: {
-                bodyColor: "#FFFFFF",
-                titleColor: "#FFFFFF",
-            },
+            chartAreaBorder: {
+                borderWidth: 0,
+            }
+            // title: {
+            //     display: true,
+            //     text: `Yearly Revenue ${data[0].totalRevenue}`,
+            // },
         },
         scales: {
-            x: {
-                ticks: {
-                    color: "#FFFFFF", // month name labels
-                },
-                grid: {
-                    color: "rgba(255,255,255,0.1)",
-                },
-            },
             y: {
                 beginAtZero: true,
-                ticks: {
-                    color: "#FFFFFF", // y-axis labels
-                },
-                grid: {
-                    color: "rgba(255,255,255,0.1)",
-                },
             },
         },
     };
 
     return <Bar data={chartData} options={options} />;
 };
-
 export default IncomeChart;

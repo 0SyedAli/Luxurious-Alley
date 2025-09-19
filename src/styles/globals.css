@@ -681,6 +681,84 @@ textarea:focus {
   max-width: 700px;
 }
 
+.rmsc .dropdown-container {
+  width: 100%;
+  height: 51px;
+  border-radius: 10px !important;
+  padding: 5px 10px;
+  border: 1px solid #C78015 !important;
+  background-color: #c7801562 !important;
+  font-weight: 500;
+  font-family: var(--font-open-sans);
+  font-size: 15px;
+  color: #FFF !important;
+  line-height: 35px;
+  resize: none;
+  text-align: start;
+}
+
+.rmsc .gray {
+  color: #FFF !important;
+}
+
+.dollar_input {
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dollar_input span {
+  font-size: 32px;
+  font-family: var(--font-open-sans);
+}
+
+.dollar_input input {
+  border: none;
+  border-bottom: 3px double #C78015;
+  border-radius: 0;
+  padding: 0;
+  height: auto;
+  width: fit-content;
+  padding: 10px 0 0;
+  background-color: transparent;
+}
+
+.dollar_input input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 3px double #C78015;
+}
+
+.dollar_input input:focus {
+  outline: none;
+  border: 1px solid #C78015;
+}
+
+.avail_serv input[type="checkbox"] {
+  height: 20px !important;
+  width: 20px !important;
+  top: 4px;
+  position: relative;
+}
+
+.auth_form .accordion-item,
+.payment1_body,
+.payment1_body input,
+.payment1 .p2_head {
+  background-color: transparent;
+}
+
+.avail_serv input::placeholder {
+  color: #686868 !important;
+
+}
+
+.avail_serv label {
+  color: #000 !important;
+
+}
+
 .add-services {
   position: relative;
   display: inline-block;
@@ -2814,7 +2892,7 @@ form.s4_form .dt_select_location input {
   font-family: var(--font-lato);
   font-size: 20px;
   font-weight: 600;
-  color: #000;
+  color: #FFF;
   margin: 0;
 }
 

@@ -11,9 +11,9 @@ const page = () => {
                 </div>
                 <div className="pricing_container">
                     <div className="pricing_item">
-                        <Link href="biling-details">
+                        <Link href="biling-details" prefetch={true}>
                             <div className="row">
-                                <div className="col-md-6 col-lg-5 col-xl-4">
+                                <div className="col-4">
                                     <div className="pi_left">
                                         <h5>Basic</h5>
                                         <h2>$45.<span>00</span></h2>
@@ -22,7 +22,7 @@ const page = () => {
                                         <p>01 user</p>
                                     </div>
                                 </div>
-                                <div className="col-md-6 col-lg-7 col-xl-8">
+                                <div className="col-8">
                                     <div className="pi_right">
                                         <p>Access these features when you get this pricing package for your business.</p>
                                         <ul>
@@ -38,9 +38,9 @@ const page = () => {
                     </div>
 
                     <div className="pricing_item">
-                        <Link href="biling-details">
+                        <Link href="biling-details" prefetch={true}>
                             <div className="row">
-                                <div className="col-md-6 col-lg-5 col-xl-4">
+                                <div className="col-4">
                                     <div className="pi_left">
                                         <h5>Premium</h5>
                                         <h2>$75.<span>00</span></h2>
@@ -49,7 +49,7 @@ const page = () => {
                                         <p>2-5 user</p>
                                     </div>
                                 </div>
-                                <div className="col-md-6 col-lg-7 col-xl-8">
+                                <div className="col-8">
                                     <div className="pi_right">
                                         <p>Access these features when you get this pricing package for your business.</p>
                                         <ul>
@@ -64,9 +64,9 @@ const page = () => {
                         </Link>
                     </div>
                     <div className="pricing_item">
-                        <Link href="biling-details">
+                        <Link href="biling-details" prefetch={true}>
                             <div className="row">
-                                <div className="col-md-6 col-lg-5 col-xl-4">
+                                <div className="col-4">
                                     <div className="pi_left">
                                         <h5>Premium PRO</h5>
                                         <h2>$95.<span>00</span></h2>
@@ -75,7 +75,7 @@ const page = () => {
                                         <p>6-10 user</p>
                                     </div>
                                 </div>
-                                <div className="col-md-6 col-lg-7 col-xl-8">
+                                <div className="col-8">
                                     <div className="pi_right">
                                         <p>Access these features when you get this pricing package for your business.</p>
                                         <ul>
@@ -90,13 +90,13 @@ const page = () => {
                         </Link>
                     </div>
                     <div className="pricing_item">
-                        <div className="row align-items-center justify-content-center">
-                            <div className="col-md-4">
+                        <div className="row">
+                            <div className="col-4">
                                 <div className="pi_left pir_left">
                                     <h5>Use Referral Code</h5>
                                 </div>
                             </div>
-                            <div className="col-md-8">
+                            <div className="col-8">
                                 <div className="pi_right pir_input">
                                     <input type="text" placeholder="enter code" />
                                     <button className="btn btn-brown">SUBMIT</button>
